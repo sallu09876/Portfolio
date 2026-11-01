@@ -476,30 +476,35 @@ export async function submitContactForm(e) {
   if (btnIcon) btnIcon.classList.remove('hidden');
   if (btnSpinner) btnSpinner.classList.add('hidden');
 
-  // Display in-modal success state
+  // Display in-modal success or failover state
   const formContainer = document.getElementById('contact-form-container');
   const successState = document.getElementById('contact-success-state');
   const successText = document.getElementById('contact-success-text');
 
-  if (successText) {
-    const serviceTopic = service && service !== 'General Consultation' ? ` regarding "${service}"` : '';
-    successText.innerText = `Thank you, ${name}! Your message${serviceTopic} has been received. Salman will review your details and get in touch at ${email} within 24 hours.`;
+  const serviceTopic = service && service !== 'General Consultation' ? ` regarding "${service}"` : '';
+
+  if (deliverySuccessful) {
+    if (successText) {
+      successText.innerText = `Thank you, ${name}! Your message${serviceTopic} has been received. Salman will review your details and get in touch at ${email} within 24 hours.`;
+    }
+    showToast(`Message sent! Thank you, ${name}.`);
+  } else {
+    if (successText) {
+      successText.innerText = `Thank you, ${name}! Opening your email client to send this inquiry directly to sallu2004mkt@gmail.com so your message is delivered immediately.`;
+    }
+    showToast(`Opening direct email client...`);
+
+    // Automatic Failover: Direct mailto trigger if Web3Forms limit reached or network down
+    const mailtoUrl = `mailto:sallu2004mkt@gmail.com?subject=${encodeURIComponent(`[Portfolio Inquiry] ${service} from ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\nTimeline: ${timeline}\n\nMessage:\n${message}`)}`;
+    setTimeout(() => {
+      window.location.href = mailtoUrl;
+    }, 1200);
   }
 
   if (formContainer && successState) {
     formContainer.classList.add('hidden');
     successState.classList.remove('hidden');
     successState.classList.add('flex');
-  }
-
-  showToast(`Message sent! Thank you, ${name}.`);
-
-  // 3. Fallback: Direct mailto trigger if Web3Forms key has not been entered yet and no local server
-  if (!deliverySuccessful && WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
-    const mailtoUrl = `mailto:sallu2004mkt@gmail.com?subject=${encodeURIComponent(`[Portfolio Inquiry] ${service} from ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\nTimeline: ${timeline}\n\nMessage:\n${message}`)}`;
-    setTimeout(() => {
-      window.location.href = mailtoUrl;
-    }, 1200);
   }
 }
 
