@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Salman Rasheed | Portfolio</title>
+  <meta name="description" content="Portfolio of Salman Rasheed M., Full Stack Developer with 1+ year experience building web applications and business platforms with React, Node.js, Express, PostgreSQL, and MongoDB.">
+  
+  <!-- Tailwind CSS v3 with Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              black: '#0D0D0D',
+              dark: '#141414',
+              gray: '#7A7A7A',
+              light: '#F8F9FA',
+              border: '#E5E5E5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Typography & Gradients Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="FlexCarousel.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased text-[#111] bg-[#FAFAFA]">
+
+  <!-- ============================================================ -->
+  <!-- PRELOADER: Luxury Monochrome Architectural Loader -->
+  <!-- ============================================================ -->
+  <aside id="portfolio-preloader" class="preloader-curtain flex flex-col justify-between p-6 sm:p-10 md:p-14 select-none pointer-events-auto overflow-hidden" aria-label="Loading portfolio">
+    
+    <!-- Center Stage Brand Focal Point -->
+    <div class="relative w-full flex flex-col items-center justify-center my-auto text-center z-10 px-4">
+      <!-- Faded Background Giant Watermark -->
+      <div class="text-[18vw] sm:text-[15vw] font-black uppercase text-white/[0.03] leading-none tracking-tighter absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none whitespace-nowrap">
+        SALMAN
+      </div>
+
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono tracking-[0.25em] text-neutral-400 uppercase mb-4 sm:mb-6 animate-pulse">
+        <span>PORTFOLIO SYSTEM</span>
+        <span class="text-neutral-600">//</span>
+        <span>2026 EDITION</span>
+      </div>
+
+      <!-- Name Headline -->
+      <div class="overflow-hidden mb-2 sm:mb-3">
+        <h1 id="preloader-title" class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight text-white">
+          Salman Rasheed M.
+        </h1>
+      </div>
+
+      <!-- Subtitle -->
+      <p class="text-xs sm:text-sm font-medium tracking-widest uppercase text-neutral-400 flex items-center gap-2.5">
+        <span>Full Stack Developer</span>
+        <span class="text-neutral-600 text-[10px]">■</span>
+        <span class="text-neutral-300">MERN Specialist</span>
+      </p>
+    </div>
+
+    <!-- Bottom Progress & Telemetry Row -->
+    <div class="w-full z-10">
+      <div class="flex items-end justify-between mb-2.5">
+        <!-- Changing Status Telemetry -->
+        <div class="flex flex-col">
+          <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-500 mb-0.5">TELEMETRY</span>
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span id="preloader-status" class="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-neutral-300">
+              Bootstrapping Core Modules...
+            </span>
+          </div>
+        </div>
+
+        <!-- Big Numeric Counter -->
+        <div class="flex items-baseline font-mono">
+          <span id="preloader-counter" class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-white tabular-nums">00</span>
+          <span class="text-lg sm:text-2xl font-bold text-neutral-500 ml-1">%</span>
+        </div>
+      </div>
+
+      <!-- Razor Progress Track -->
+      <div class="w-full h-[2px] sm:h-[3px] bg-white/10 rounded-full overflow-hidden relative">
+        <div id="preloader-progress-bar" class="h-full bg-gradient-to-r from-neutral-500 via-white to-emerald-400 rounded-full w-0 transition-[width] duration-100 ease-out"></div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- Preloader Controller -->
+  <script src="./preloader.js"></script>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="fixed bottom-20 right-5 sm:right-7 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Floating Scroll To Top Button -->
+  <button id="scroll-to-top-btn" 
+          type="button"
+          onclick="scrollToTop()" 
+          aria-label="Scroll to top" 
+          title="Back to top"
+          class="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/90 hover:bg-black text-white border border-neutral-700 shadow-2xl backdrop-blur-md flex items-center justify-center transform translate-y-6 opacity-0 pointer-events-none transition-all duration-300 hover:scale-110 active:scale-95 group">
+    <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white transform group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- BEGIN: Navigation Header -->
+  <header class="relative z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 px-6 md:px-14 max-w-[1400px] mx-auto flex items-center justify-between" data-purpose="site-navigation">
+    <!-- Brand Wordmark -->
+    <a class="group font-extrabold text-xl tracking-tight text-black flex items-center" href="#home">
+      <span>SR.</span>
+      <span class="inline-block w-2 h-2 bg-black rounded-full ml-1 transition-transform group-hover:scale-150 duration-200"></span>
+    </a>
+
+    <!-- Center Navigation Links (Clean & Streamlined) -->
+    <nav class="hidden md:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600">
+      <a id="nav-about" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#about">ABOUT</a>
+      <a id="nav-experience" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#experience">EXPERIENCE</a>
+      <a id="nav-projects" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#projects">PROJECTS</a>
+      <a id="nav-skills" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#skills">SKILLS</a>
+      <a id="nav-services" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#services">SERVICES</a>
+      <a class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="https://drive.google.com/file/d/1jSwTFry6pTpy56oJhw4K9bhx7q2yhM2r/view?usp=sharing" target="_blank" rel="noopener">RESUME ↗</a>
+    </nav>
+
+    <!-- Right Social & Menu Links -->
+    <div class="flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm">
+      <!-- Email -->
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="mailto:sallu2004mkt@gmail.com" title="Email: sallu2004mkt@gmail.com">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 0 02-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 02 2z"></path></svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://www.linkedin.com/in/salmanrasheedm/" target="_blank" rel="noopener" title="LinkedIn">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+
+      <!-- GitHub -->
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://github.com/sallu09876" target="_blank" rel="noopener" title="GitHub">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      </a>
+
+      <!-- Instagram -->
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://www.instagram.com/salman_rasheed_m/" target="_blank" rel="noopener" title="Instagram">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="5" ry="5" width="18" x="3" y="3"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu" class="md:hidden w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 ml-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex justify-end">
+    <div id="mobile-drawer-content" class="w-4/5 max-w-sm bg-white h-full p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-neutral-200">
+          <span class="font-extrabold text-lg tracking-tight">SR.</span>
+          <button onclick="toggleMobileMenu()" class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-700 hover:border-black">
+            ✕
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 mt-8 text-base font-bold tracking-wider">
+          <a onclick="toggleMobileMenu()" href="#about" class="py-2 border-b border-neutral-100 hover:text-neutral-500">ABOUT</a>
+          <a onclick="toggleMobileMenu()" href="#experience" class="py-2 border-b border-neutral-100 hover:text-neutral-500">EXPERIENCE</a>
+          <a onclick="toggleMobileMenu()" href="#projects" class="py-2 border-b border-neutral-100 hover:text-neutral-500">PROJECTS</a>
+          <a onclick="toggleMobileMenu()" href="#skills" class="py-2 border-b border-neutral-100 hover:text-neutral-500">SKILLS</a>
+          <a onclick="toggleMobileMenu()" href="#services" class="py-2 border-b border-neutral-100 hover:text-neutral-500">SERVICES</a>
+          <a onclick="toggleMobileMenu()" href="https://drive.google.com/file/d/1jSwTFry6pTpy56oJhw4K9bhx7q2yhM2r/view?usp=sharing" target="_blank" rel="noopener" class="py-2 border-b border-neutral-100 hover:text-neutral-500">RESUME ↗</a>
+          <a onclick="toggleMobileMenu(); openContactModal();" href="javascript:void(0)" class="py-2 text-black hover:underline">CONTACT</a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-neutral-200">
+        <p class="text-xs uppercase tracking-widest text-neutral-400 mb-1">SALMAN RASHEED M.</p>
+        <p class="text-xs text-neutral-600 mb-3">Full Stack &amp; MERN Developer</p>
+        <a href="mailto:sallu2004mkt@gmail.com" class="inline-flex items-center gap-2 text-xs font-mono text-black underline">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 0 02-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 02 2z"></path></svg>
+          sallu2004mkt@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- END: Navigation -->
+
+  <!-- BEGIN: Hero Section -->
+  <main class="hero-reveal relative max-w-[1400px] mx-auto px-6 md:px-14 pt-6 md:pt-12 pb-20 overflow-hidden" data-purpose="hero-section" id="home">
+    <!-- Big Title Header -->
+    <div class="text-center w-full mb-6 md:mb-10 relative z-0 select-none">
+      <h1 id="hero-title" class="text-[9.5vw] md:text-[8rem] lg:text-[9.5rem] font-extrabold uppercase leading-[0.85] tracking-tight">
+        <span class="block">
+          <span class="text-[#121212]">EXPLORE MY</span>
+        </span>
+        <span class="block">
+          <span class="metallic-title">PORTFOLIO</span>
+        </span>
+      </h1>
+    </div>
+
+    <!-- Center Headshot & Symmetrical Content Grid -->
+    <div class="relative grid grid-cols-1 md:grid-cols-12 items-center mt-2 md:-mt-6">
+      
+      <!-- Left Column: Developer info & Arrow -->
+      <div class="md:col-span-3 flex flex-col items-start md:items-start pl-2 md:pl-6 order-2 md:order-1 pt-6 md:pt-0">
+        <span class="text-xs font-bold tracking-wider uppercase text-neutral-800 mb-6">DEVELOPER EST.2022</span>
+        <a class="circle-btn w-14 h-14 md:w-16 md:h-16 border-neutral-300" href="#about" aria-label="Scroll to About Section">
+          <svg class="w-5 h-5 text-neutral-800 transform rotate-45" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Center Column: Stylized Black and White Headshot (in front of text) -->
+      <div class="md:col-span-6 flex justify-center order-1 md:order-2 relative z-10 -mt-16 md:-mt-36">
+        <div class="relative max-w-full w-[280px] sm:w-[320px] h-[360px] sm:h-[400px] md:w-[480px] md:h-[580px] flex items-end justify-center hero-portrait-mask">
+          <img src="assets/hero-profile.png" 
+               id="hero-portrait-img"
+               alt="Salman Rasheed M. — Full Stack Developer" 
+               class="w-full h-full object-contain object-bottom pointer-events-none select-none transition-transform duration-700 hover:scale-[1.02]"
+               onerror="this.src='assets/hero_portrait.png'">
+        </div>
+      </div>
+
+      <!-- Right Column: Pitch and Disciplines -->
+      <div class="md:col-span-3 flex flex-col items-start md:items-end text-left order-3 pt-6 md:pt-0 pr-2 md:pr-6 space-y-10">
+        <!-- Pitch Quote -->
+        <p class="text-[11px] md:text-xs uppercase font-medium leading-relaxed tracking-wider text-neutral-700 max-w-[260px] text-left">
+          BUILDING PRODUCTION-READY FULL-STACK APPLICATIONS ACROSS SAAS, HEALTHCARE, LOGISTICS, E-COMMERCE, AND BUSINESS PLATFORMS.
+        </p>
+
+        <!-- Service List with hover interaction -->
+        <div class="flex flex-col space-y-3 text-[11px] md:text-xs font-semibold tracking-widest text-neutral-600 uppercase">
+          <a href="#services" onclick="selectService(0)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5">
+            <span>FULL STACK WEB DEV</span>
+          </a>
+          <a href="#services" onclick="selectService(1)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5">
+            <span>FRONTEND DEV</span>
+          </a>
+          <a href="#services" onclick="selectService(2)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5 font-bold text-black">
+            <span>BACKEND DEV</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <!-- END: Hero Section -->
+
+  <!-- BEGIN: About Section (ScrollExpandMedia Component) -->
+  <section class="relative w-full bg-[#0D0D0D] text-white" id="about" style="min-height: 200vh;">
+    <div class="sticky top-0 w-full h-[100dvh] overflow-hidden flex flex-col items-center justify-start z-10">
+      <!-- Background Ambient with dynamic opacity: 1 - scrollProgress (Previous Starry Night Castle Background) -->
+      <div id="sem-bg-img" class="absolute inset-0 z-0 h-full w-full pointer-events-none transition-opacity duration-150 ease-out" style="will-change: opacity; transform: translateZ(0);">
+        <img
+          src="assets/about_starry_castle_hq.jpg?v=10"
+          alt="Monochrome Starry Night Castle Background"
+          class="w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-black/25"></div>
+      </div>
+
+      <!-- Centered Interactive Stage Container (Exact from React Component) -->
+      <div class="container mx-auto flex flex-col items-center justify-start relative z-10 w-full h-full">
+        <div class="flex flex-col items-center justify-center w-full h-[100dvh] relative">
+          
+          <!-- Expanding Media Card (Closed state: 300px x 400px, expands on scroll) -->
+          <div
+            id="sem-media-container"
+            class="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden shadow-2xl transition-none bg-[#07090E]"
+            style="width: 300px; height: 400px; max-width: 95vw; max-height: 85vh; box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9); border: 1px solid rgba(255,255,255,0.35); will-change: width, height; backface-visibility: hidden;"
+          >
+            <!-- Media Image Container: fits 100% of the box without any letterboxing or cropping -->
+            <div class="relative w-full h-full overflow-hidden rounded-xl flex items-center justify-center bg-[#07090E]">
+              <!-- Crisp Base Image (GPU accelerated) -->
+              <img
+                id="sem-media-img"
+                src="assets/about_floating_light_hq.png?v=14"
+                alt="Salman Rasheed M. — Full Stack Architecture &amp; Engineering"
+                class="w-full h-full object-cover rounded-xl transition-none"
+                style="transform: scale(1.02) translateZ(0); transform-origin: center; backface-visibility: hidden;"
+              />
+              <!-- Pre-blurred Layer for 120 FPS GPU-accelerated Unblur (fades out opacity smoothly on scroll) -->
+              <img
+                id="sem-media-blur"
+                src="assets/about_floating_light_hq.png?v=14"
+                alt=""
+                aria-hidden="true"
+                class="absolute inset-0 w-full h-full object-cover rounded-xl transition-none pointer-events-none"
+                style="filter: blur(18px); transform: scale(1.08) translateZ(0); transform-origin: center; opacity: 1; will-change: opacity; backface-visibility: hidden;"
+              />
+              <!-- Subtle Gradient Overlay: protects top/bottom legibility while keeping the center 100% transparent -->
+              <div id="sem-media-overlay" class="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/85 rounded-xl transition-opacity duration-150 pointer-events-none"></div>
+
+              <!-- Minimal Aesthetic About Info - Perimeter Layout with Empty Center -->
+              <div
+                id="sem-media-content"
+                class="absolute inset-0 z-20 flex flex-col justify-between p-5 sm:p-7 md:p-9 pointer-events-none opacity-0 transition-all duration-300 select-none"
+              >
+                <!-- Top Perimeter: Refined Monochrome Headline -->
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-white/10 pb-3">
+                  <h3 class="text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-tight text-white max-w-xl">
+                    TURNING BUSINESS REQUIREMENTS INTO SCALABLE FULL-STACK APPLICATIONS
+                  </h3>
+                  <span class="text-[10px] font-mono tracking-wider uppercase text-neutral-400 shrink-0">
+                    PERINTHALMANNA, KERALA &bull; INDIA
+                  </span>
+                </div>
+
+                <!-- Center Zone: COMPLETELY OPEN & EMPTY - 100% unobscured view of artwork -->
+                <div class="flex-1 pointer-events-none min-h-[140px] md:min-h-[200px]"></div>
+
+                <!-- Bottom Perimeter: Disciplines, About Summary & Monochrome CTAs -->
+                <div class="pt-3 border-t border-white/10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                  <!-- About Me Summary & Disciplines -->
+                  <div class="max-w-xl space-y-2">
+                    <div class="flex items-center gap-2.5">
+                      <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">DISCIPLINE &amp; STACK</span>
+                      <div class="h-px bg-white/15 w-6"></div>
+                      <span class="text-[10px] font-mono tracking-widest uppercase text-neutral-400">REACT &bull; NEXT.JS &bull; NODE.JS &bull; EXPRESS &bull; POSTGRESQL &bull; MONGODB</span>
+                    </div>
+                    <p class="text-xs sm:text-[12px] font-medium leading-relaxed tracking-wider uppercase text-neutral-300">
+                      FULL STACK DEVELOPER WITH 1+ YEAR OF PROFESSIONAL EXPERIENCE BUILDING WEB APPLICATIONS AND BUSINESS PLATFORMS USING REACT, NODE.JS, EXPRESS, POSTGRESQL, AND MONGODB. EXPERIENCED IN REST APIS, ROLE-BASED ACCESS CONTROL, DATABASE-DRIVEN SYSTEMS, AND END-TO-END APPLICATION DEVELOPMENT.
+                    </p>
+                  </div>
+
+                  <!-- Monochrome Action Buttons -->
+                  <div class="flex items-center gap-2 sm:gap-3 shrink-0 pt-1 md:pt-0">
+                    <a href="javascript:void(0)" onclick="openContactModal()" class="pointer-events-auto px-4 sm:px-5 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold tracking-wider uppercase transition-all duration-200 inline-flex items-center gap-2">
+                      <span>GET IN TOUCH</span>
+                      <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1jSwTFry6pTpy56oJhw4K9bhx7q2yhM2r/view?usp=sharing" target="_blank" rel="noopener" class="pointer-events-auto px-4 py-2.5 rounded-full border border-neutral-500 hover:border-white text-white text-xs font-bold tracking-wider uppercase transition-all duration-200">
+                      RESUME ↗
+                    </a>
+                    <a href="#services" class="pointer-events-auto px-4 py-2.5 rounded-full border border-neutral-500 hover:border-white text-white text-xs font-bold tracking-wider uppercase transition-all duration-200">
+                      SERVICES
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Subtitles (Translate Outward) -->
+            <div class="flex flex-col items-center text-center relative z-10 mt-4 pointer-events-none">
+              <p id="sem-date" class="text-xl md:text-2xl text-neutral-300 font-semibold tracking-wider uppercase transition-none drop-shadow">
+                BACKGROUND &amp; VISION
+              </p>
+              <p id="sem-scroll-prompt" class="text-neutral-400 font-medium text-xs tracking-widest uppercase transition-none mt-1 drop-shadow">
+                SCROLL TO EXPAND
+              </p>
+            </div>
+          </div>
+
+          <!-- Splitting Title Header (ABOUT translates left, ME translates right) -->
+          <div class="flex items-center justify-center text-center gap-2 sm:gap-4 w-full relative z-10 pointer-events-none flex-col" style="will-change: transform; backface-visibility: hidden;">
+            <h2 id="sem-title-first" class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tight transition-none drop-shadow-2xl" style="will-change: transform, opacity;">
+              ABOUT
+            </h2>
+            <h2 id="sem-title-rest" class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tight transition-none drop-shadow-2xl" style="will-change: transform, opacity;">
+              ME
+            </h2>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: About Section (ScrollExpandMedia Component) -->
+
+  <!-- BEGIN: Experience Section ("Where I've Been" — Horizontal Cinematic Installation) -->
+  <section
+    class="relative w-full bg-[#070709] text-white overflow-visible"
+    data-purpose="experience-section"
+    id="experience"
+    style="height: 380vh;"
+    string="progress"
+    string-id="experience-journey"
+  >
+    <!-- Sticky 100vh Theater / Viewport Window -->
+    <div
+      id="exp-sticky-viewport"
+      class="sticky top-0 w-full h-[100dvh] overflow-hidden bg-[#070709] flex flex-col justify-between select-none"
+    >
+      <!-- Layer 0: Background Cinematic Ambience & Atmospheric Grid -->
+      <div class="absolute inset-0 pointer-events-none opacity-20">
+        <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </div>
+
+      <!-- Layer 0B: Massive Ambient Horizontal Running Tickers (Layered Depth) -->
+      <div class="absolute inset-0 flex flex-col justify-around pointer-events-none overflow-hidden opacity-[0.035]">
+        <!-- Upper Ticker (Drifting Left) -->
+        <div id="exp-ticker-top" class="whitespace-nowrap font-black uppercase text-[14vw] tracking-tighter will-change-transform leading-none">
+          FULL STACK ARCHITECTURE &nbsp;&nbsp; REST APIS &amp; DATABASE DESIGN &nbsp;&nbsp; REACT &amp; NODE.JS &nbsp;&nbsp; SCALABLE ENTERPRISE PLATFORMS &nbsp;&nbsp;
+        </div>
+        <!-- Lower Ticker (Drifting Right) -->
+        <div id="exp-ticker-bottom" class="whitespace-nowrap font-black uppercase text-[14vw] tracking-tighter will-change-transform leading-none">
+          2025 &nbsp;&nbsp; TECHOLAS TECHNOLOGIES &nbsp;&nbsp; 2026 &nbsp;&nbsp; SINNONTEQ &nbsp;&nbsp; 2026-PRESENT &nbsp;&nbsp; CODEEDEX TECHNOLOGIES &nbsp;&nbsp;
+        </div>
+      </div>
+
+      <!-- Top Minimalist Editorial HUD Bar -->
+      <header class="relative z-30 w-full px-6 md:px-14 pt-6 pb-4 flex items-center justify-between border-b border-white/[0.08] backdrop-blur-md bg-[#070709]/80">
+        <div class="flex items-center gap-4">
+          <span id="exp-hud-phase" class="text-[11px] font-semibold tracking-widest uppercase text-neutral-400">
+            FOUNDATION &amp; JOURNEY
+          </span>
+        </div>
+
+        <!-- Progress Tracker Bar (Top Hairline) -->
+        <div class="flex items-center gap-3">
+          <div class="w-24 sm:w-36 h-[2px] bg-white/10 rounded-full overflow-hidden">
+            <div id="exp-hud-progress" class="h-full bg-white transition-all duration-75 w-0"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Center: Massive Horizontal Spatial Canvas (Controlled by Vertical Scroll) -->
+      <div class="relative z-20 flex-1 w-full overflow-hidden flex items-center">
+        <div
+          id="exp-horizontal-stage"
+          class="flex items-center h-full will-change-transform transition-none"
+          style="width: 380vw;"
+        >
+          <!-- ================= INTRO ENVIRONMENT (0vw - 85vw) ================= -->
+          <div class="exp-panel flex-shrink-0 w-[95vw] md:w-[85vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
+            <div class="max-w-3xl">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] text-[10px] font-semibold tracking-widest uppercase text-neutral-300 mb-6">
+                <span>FOUNDATION &amp; JOURNEY</span>
+              </div>
+              <h2 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-white leading-[0.88] mb-8">
+                WHERE<br>I'VE BEEN
+              </h2>
+              <p class="text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed max-w-xl font-normal">
+                My professional journey through engineering responsive interfaces, RESTful architectures, and scalable business platforms.
+              </p>
+            </div>
+          </div>
+
+          <!-- ================= CHAPTER 01: TECHOLAS TECHNOLOGIES (85vw - 180vw) ================= -->
+          <div class="exp-panel relative flex-shrink-0 w-[100vw] md:w-[95vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
+            <!-- Background Parallax Date Typography -->
+            <div
+              class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
+              data-parallax-factor="0.15"
+            >
+              2025 — 2026
+            </div>
+
+            <div class="relative z-10 max-w-4xl">
+              <!-- Eyebrow & Date -->
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">
+                  2025 — 2026
+                </span>
+                <span class="h-[1px] w-12 bg-white/20"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-white">
+                  FOUNDATION &amp; LEARNING
+                </span>
+                <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full border border-white/20 text-[10px] font-semibold uppercase text-neutral-300">
+                  TECHOLAS TECHNOLOGIES
+                </span>
+              </div>
+
+              <!-- Oversized Typographic Role Title -->
+              <h3 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6">
+                MERN STACK<br>INTERN
+              </h3>
+
+              <!-- Narrative Summary -->
+              <p class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
+                Developed responsive interfaces, REST APIs, and database-driven applications while building practical full-stack development skills.
+              </p>
+
+              <!-- Milestone Specifications (Hairline Grid) -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8">
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">FRONTEND DEV</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Built responsive interfaces using React.js and Tailwind CSS</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">API ARCHITECTURE</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Developed REST APIs with Node.js, Express.js, and MVC architecture</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">DATABASES</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Worked with MongoDB and PostgreSQL for structured data persistence</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= CHAPTER 02: SINNONTEQ (180vw - 280vw) ================= -->
+          <div class="exp-panel relative flex-shrink-0 w-[100vw] md:w-[95vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
+            <!-- Background Parallax Date Typography -->
+            <div
+              class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
+              data-parallax-factor="0.15"
+            >
+              2026
+            </div>
+
+            <div class="relative z-10 max-w-4xl">
+              <!-- Eyebrow & Date -->
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">
+                  2026
+                </span>
+                <span class="h-[1px] w-12 bg-white/20"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-white">
+                  PROFESSIONAL EXPERIENCE
+                </span>
+                <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full border border-white/20 text-[10px] font-semibold uppercase text-neutral-300">
+                  SINNONTEQ
+                </span>
+              </div>
+
+              <!-- Oversized Typographic Role Title -->
+              <h3 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6">
+                SOFTWARE ENGINEER<br>INTERN
+              </h3>
+
+              <!-- Narrative Summary -->
+              <p class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
+                Contributed to B2B SaaS development, secure JWT authentication architectures, and AI-powered chatbot solutions.
+              </p>
+
+              <!-- Milestone Specifications (Hairline Grid) -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8">
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">B2B SAAS</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Developed a B2B SaaS platform using React, Node.js, and PostgreSQL</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">SECURE APIS</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Implemented MVC REST APIs with JWT authentication workflows</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">AI SOLUTIONS</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Worked on Azure OpenAI chatbot with multi-layer LLM &amp; RAG intent cache</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= CHAPTER 03: CODEEDEX TECHNOLOGIES (280vw - 380vw) ================= -->
+          <div class="exp-panel relative flex-shrink-0 w-[100vw] md:w-[95vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
+            <!-- Background Parallax Date Typography -->
+            <div
+              class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
+              data-parallax-factor="0.15"
+            >
+              2026 — PRESENT
+            </div>
+
+            <div class="relative z-10 max-w-4xl">
+              <!-- Eyebrow & Date -->
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">
+                  2026 — PRESENT
+                </span>
+                <span class="h-[1px] w-12 bg-white/20"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-white">
+                  FULL-STACK DEVELOPMENT
+                </span>
+                <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full border border-white/20 text-[10px] font-semibold uppercase text-neutral-300">
+                  CODEEDEX TECHNOLOGIES
+                </span>
+              </div>
+
+              <!-- Oversized Typographic Role Title -->
+              <h3 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6">
+                MERN STACK<br>DEVELOPER
+              </h3>
+
+              <!-- Narrative Summary -->
+              <p class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
+                Working on enterprise business management platforms (HRM, PMS, CRM) and high-throughput logistics applications.
+              </p>
+
+              <!-- Milestone Specifications (Hairline Grid) -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8">
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">ENTERPRISE SAAS</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Contributing to HRM, PMS, and CRM multi-tenant platform development</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">DYNAMIC RBAC</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Implementing dynamic role-based access control and business workflows</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">LOGISTICS PLATFORM</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Building a logistics suite connecting customers, drivers, and admins</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Minimalist Editorial Navigation & Spatial Status Bar -->
+      <footer class="relative z-30 w-full px-6 md:px-14 py-4 flex items-center justify-between border-t border-white/[0.08] backdrop-blur-md bg-[#070709]/80">
+        <!-- Interactive Navigation Markers -->
+        <div class="flex items-center gap-2 sm:gap-4">
+          <button
+            type="button"
+            class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/20 text-white bg-white/10 transition-all hover:bg-white/20"
+            data-target-progress="0.32"
+          >
+            TECHOLAS
+          </button>
+          <button
+            type="button"
+            class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/5 text-neutral-500 hover:text-white transition-all hover:border-white/20"
+            data-target-progress="0.62"
+          >
+            SINNONTEQ
+          </button>
+          <button
+            type="button"
+            class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/5 text-neutral-500 hover:text-white transition-all hover:border-white/20"
+            data-target-progress="0.92"
+          >
+            CODEEDEX
+          </button>
+        </div>
+      </footer>
+    </div>
+  </section>
+  <!-- END: Experience Section -->
+
+  <!-- BEGIN: Featured Project Section -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-16" data-purpose="featured-projects" id="projects">
+    <!-- Header -->
+    <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
+          FEATURED PROJECTS
+        </h2>
+        <p class="text-xs uppercase tracking-widest text-neutral-500 mt-2">
+          Production full-stack applications &bull; Healthcare &bull; Logistics &bull; SaaS platforms
+        </p>
+      </div>
+    </div>
+
+    <!-- Dynamic Projects Content Area with FlexCarousel -->
+    <div id="projects-content" class="w-full">
+      <div id="flex-carousel-container" class="rounded-3xl border border-neutral-200 bg-[#EFEFEF] overflow-hidden shadow-inner" style="width: 100%; height: 560px; position: relative;">
+        <!-- FlexCarousel mounts here -->
+      </div>
+    </div>
+  </section>
+  <!-- END: Featured Project Section -->
+
+  <!-- BEGIN: Landing Pages Featured Projects (WorksWheel) Section -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-16" data-purpose="landing-pages-featured-projects" id="landing-pages">
+    <!-- Header with Title -->
+    <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
+          LANDING PAGES
+        </h2>
+        <p class="text-xs uppercase tracking-widest text-neutral-500 mt-2">
+          Interactive 3D drum reel showcasing high-converting web and product landing pages
+        </p>
+      </div>
+    </div>
+
+    <!-- WorksWheel 3D Container -->
+    <div class="w-full relative overflow-hidden" style="height: 640px; min-height: 520px;">
+      <div id="works-wheel-container" class="w-full h-full relative">
+        <!-- WorksWheel mounts here -->
+      </div>
+    </div>
+  </section>
+  <!-- END: Landing Pages Featured Projects Section -->
+
+  <!-- BEGIN: Skills Section -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-20" data-purpose="skills-section" id="skills">
+    
+    <!-- Section Header & Filter Tabs -->
+    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800 text-[10px] font-mono tracking-widest uppercase mb-3">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>TECH ARSENAL // 34 PRODUCTION MODULES</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-neutral-900">
+          SKILLS &amp; ARCHITECTURE
+        </h2>
+        <p class="text-xs uppercase tracking-widest text-neutral-500 mt-2 max-w-2xl font-medium leading-relaxed">
+          Curated full-stack engineering toolchain across reactive frontend interfaces, distributed Node.js APIs, relational &amp; document persistence, and automated cloud workflows.
+        </p>
+      </div>
+
+      <!-- Quick Interactive Category Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <button type="button" onclick="filterSkills('all')" id="skill-filter-all" class="skill-tab-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-black text-white shadow-sm transition">All (34)</button>
+        <button type="button" onclick="filterSkills('frontend')" id="skill-filter-frontend" class="skill-tab-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition">Frontend (9)</button>
+        <button type="button" onclick="filterSkills('backend')" id="skill-filter-backend" class="skill-tab-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition">Backend &amp; API (10)</button>
+        <button type="button" onclick="filterSkills('database')" id="skill-filter-database" class="skill-tab-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition">Database (6)</button>
+        <button type="button" onclick="filterSkills('cloud')" id="skill-filter-cloud" class="skill-tab-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition">Cloud &amp; Tools (9)</button>
+      </div>
+    </div>
+
+    <!-- Infinite Gliding Tech Ribbon -->
+    <div class="w-full overflow-hidden relative rounded-2xl bg-[#0e0e11] text-white py-3.5 mb-10 border border-neutral-800 shadow-sm select-none">
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0e0e11] to-transparent z-10"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0e0e11] to-transparent z-10"></div>
+      
+      <div class="skill-marquee-track flex items-center gap-8 whitespace-nowrap text-xs font-mono tracking-widest uppercase">
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>REACT.JS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>NODE.JS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>POSTGRESQL</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">NEXT.JS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>EXPRESS.JS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>MONGODB</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">TYPESCRIPT</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">DOCKER</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">REDIS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">TAILWIND CSS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">PRISMA</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">ZUSTAND</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">BULLMQ</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">REST APIS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">RAZORPAY</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">ZOD</span>
+        <span class="text-neutral-600">/</span>
+        <!-- Repeated sequence for seamless loop -->
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>REACT.JS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>NODE.JS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>POSTGRESQL</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">NEXT.JS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>EXPRESS.JS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-white font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>MONGODB</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">TYPESCRIPT</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">DOCKER</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">REDIS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">TAILWIND CSS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">PRISMA</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">ZUSTAND</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">BULLMQ</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">REST APIS</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">RAZORPAY</span>
+        <span class="text-neutral-600">/</span>
+        <span class="flex items-center gap-2 text-neutral-300">ZOD</span>
+        <span class="text-neutral-600">/</span>
+      </div>
+    </div>
+
+    <!-- 4 Modular Bento Architecture Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="skills-grid">
+      
+      <!-- Category 1: Frontend Engineering -->
+      <div data-category="frontend" class="skill-category-card p-7 sm:p-8 rounded-[28px] md:rounded-[32px] border border-neutral-200/90 bg-white hover:border-black transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-neutral-400">01 // INTERFACE ARCHITECTURE</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-neutral-100 text-neutral-700 uppercase">9 Techs</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-neutral-900 mb-2">Frontend &amp; UI Systems</h3>
+          <p class="text-xs text-neutral-500 leading-relaxed mb-6 font-light">
+            Crafting highly responsive single-page web applications with modular components, type-safe state hydration, and fluid animations.
+          </p>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="React.js" data-cat="Frontend Engineering" data-desc="Core SPA library utilized for component hierarchies, custom hooks, reactive state flow, and virtual DOM optimization." data-icon="⚛️" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[11px] transition-colors">⚛️</span>
+              <span>React.js</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Next.js" data-cat="Frontend Engineering" data-desc="Production framework for hybrid server-side rendering, static site generation, fast routing, and high-performance SEO." data-icon="▲" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] font-black transition-colors">▲</span>
+              <span>Next.js</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="JavaScript" data-cat="Frontend Engineering" data-desc="Deep mastery of modern ES6+, asynchronous promises, closures, Event Loop architecture, and DOM telemetry." data-icon="JS" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[9px] font-black font-mono transition-colors">JS</span>
+              <span>JavaScript</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="TypeScript" data-cat="Frontend Engineering" data-desc="Strict static typing, interfaces, generics, and compile-time code validation preventing runtime defects across full-stack applications." data-icon="TS" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[9px] font-black font-mono transition-colors">TS</span>
+              <span>TypeScript</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Tailwind CSS" data-cat="Frontend Engineering" data-desc="Design token systems, custom typography scales, high-contrast monochrome interfaces, and fluid responsive styling." data-icon="🎨" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🎨</span>
+              <span>Tailwind CSS</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Redux" data-cat="Frontend State Management" data-desc="Predictable global state container with actions, reducers, and middleware pipelines for enterprise applications." data-icon="🔄" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🔄</span>
+              <span>Redux</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Zustand" data-cat="Frontend State Management" data-desc="Streamlined, atomic reactive store for modern React apps without boilerplate or unnecessary re-renders." data-icon="⚡" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">⚡</span>
+              <span>Zustand</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="TanStack Query" data-cat="Frontend Data Fetching" data-desc="Asynchronous server-state synchronization, automatic background refetching, optimistic UI updates, and intelligent caching." data-icon="📡" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">📡</span>
+              <span>TanStack Query</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Google Maps API" data-cat="Geospatial Telemetry" data-desc="Real-time consignment tracking, live driver geocoding, route matrix optimization, and interactive mapping in logistics apps." data-icon="🗺️" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🗺️</span>
+              <span>Google Maps API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-6 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+          <span>PIPELINE: VIRTUAL DOM • SPA • REACTIVITY</span>
+          <span class="text-neutral-900 font-bold">100% PRODUCTION READY</span>
+        </div>
+      </div>
+
+      <!-- Category 2: Backend Architecture & Distributed APIs -->
+      <div data-category="backend" class="skill-category-card p-7 sm:p-8 rounded-[28px] md:rounded-[32px] border border-neutral-200/90 bg-white hover:border-black transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-neutral-400">02 // SERVER &amp; API ARCHITECTURE</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-neutral-100 text-neutral-700 uppercase">10 Techs</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-neutral-900 mb-2">Backend &amp; Distributed APIs</h3>
+          <p class="text-xs text-neutral-500 leading-relaxed mb-6 font-light">
+            Engineering high-throughput Node.js microservices, granular RBAC security, payment orchestration, and asynchronous background queues.
+          </p>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Node.js" data-cat="Backend Architecture" data-desc="Asynchronous non-blocking I/O runtime powering scalable server architectures, event-driven pipelines, and high-concurrency microservices." data-icon="🟩" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🟩</span>
+              <span>Node.js</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Express.js" data-cat="Backend Framework" data-desc="Minimalist, fast web framework structured with clean MVC separation of concerns, custom middleware stacks, and error interceptors." data-icon="⚡" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">⚡</span>
+              <span>Express.js</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="REST APIs" data-cat="API Protocol" data-desc="Standardized HTTP resource routing, pagination, filtering, status code semantics, and idempotent operations." data-icon="🔗" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🔗</span>
+              <span>REST APIs</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="JWT" data-cat="Security & Auth" data-desc="Stateless cryptographically signed tokens with refresh/access rotation, secure HTTP-only cookies, and session invalidation." data-icon="🔐" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🔐</span>
+              <span>JWT</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Role Based Auth" data-cat="Enterprise Authorization" data-desc="Dynamic permission matrices supporting granular multi-tier roles (Superadmin, Clinic Staff, Delivery Agent, Customer) across routes." data-icon="🛡️" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🛡️</span>
+              <span>Role Based Auth</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Zod" data-cat="Data Validation" data-desc="Runtime schema declaration and static TypeScript inference for request payload sanitation, sanitizing API boundaries." data-icon="✨" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">✨</span>
+              <span>Zod</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Razorpay" data-cat="Fintech & Payments" data-desc="Payment gateway SDK integration, dynamic checkout order generation, webhook signature verification, and automated refunds." data-icon="💳" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">💳</span>
+              <span>Razorpay</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Webhooks" data-cat="Event Ingestion" data-desc="Asynchronous event consumer with HMAC signature verification, idempotent delivery deduplication, and retry queues." data-icon="🪝" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🪝</span>
+              <span>Webhooks</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="FCM" data-cat="Push Telemetry" data-desc="Firebase Cloud Messaging for transactional push notifications, driver dispatch alerts, and live appointment reminders." data-icon="🔔" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🔔</span>
+              <span>FCM</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="BullMQ" data-cat="Distributed Task Queues" data-desc="Redis-backed high-throughput background job processing, scheduled cron workers, rate limiting, and failure retry management." data-icon="🐂" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🐂</span>
+              <span>BullMQ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-6 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+          <span>PIPELINE: MVC • REST • RBAC • QUEUES</span>
+          <span class="text-neutral-900 font-bold">ZERO SECURITY LEAKS</span>
+        </div>
+      </div>
+
+      <!-- Category 3: Database & Data Management -->
+      <div data-category="database" class="skill-category-card p-7 sm:p-8 rounded-[28px] md:rounded-[32px] border border-neutral-200/90 bg-white hover:border-black transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-neutral-400">03 // DATA PERSISTENCE &amp; CACHE</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-neutral-100 text-neutral-700 uppercase">6 Techs</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-neutral-900 mb-2">Database &amp; Data Engineering</h3>
+          <p class="text-xs text-neutral-500 leading-relaxed mb-6 font-light">
+            Architecting ACID-compliant relational databases, high-speed document stores, in-memory caches, and type-safe ORM migrations.
+          </p>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="PostgreSQL" data-cat="Relational Database" data-desc="Primary production relational database for complex joins, foreign keys, indexing, JSONB queries, and high-integrity transactional schemas." data-icon="🐘" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🐘</span>
+              <span>PostgreSQL</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="MySQL" data-cat="Relational Database" data-desc="Structured SQL database schema design, indexing, stored procedures, and high-performance query optimization." data-icon="🐬" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🐬</span>
+              <span>MySQL</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="MongoDB" data-cat="NoSQL Document Database" data-desc="Document-oriented NoSQL database for flexible data models, multi-vendor product catalogs, and rapid prototyping." data-icon="🍃" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🍃</span>
+              <span>MongoDB</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Prisma" data-cat="Type-Safe ORM" data-desc="Modern next-gen ORM providing auto-generated type-safe client queries, automated database migrations, and relationship models." data-icon="💎" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">💎</span>
+              <span>Prisma</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Mongoose ODM" data-cat="Document Modeling" data-desc="Schema-based solution for MongoDB application data validation, pre/post middleware hooks, and aggregation pipelines." data-icon="📜" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">📜</span>
+              <span>Mongoose ODM</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Redis" data-cat="In-Memory Cache & Broker" data-desc="Sub-millisecond in-memory key-value data store for session caching, token blacklisting, and task queue management." data-icon="⚡" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">⚡</span>
+              <span>Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-6 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+          <span>SCHEMA: ACID RELATIONAL • NOSQL • CACHE</span>
+          <span class="text-neutral-900 font-bold">SUB-MILLISECOND ACCESS</span>
+        </div>
+      </div>
+
+      <!-- Category 4: Cloud, DevOps & Engineering Tools -->
+      <div data-category="cloud" class="skill-category-card p-7 sm:p-8 rounded-[28px] md:rounded-[32px] border border-neutral-200/90 bg-white hover:border-black transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-neutral-400">04 // CLOUD INFRASTRUCTURE &amp; TOOLS</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-neutral-100 text-neutral-700 uppercase">9 Techs</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-neutral-900 mb-2">Cloud, DevOps &amp; Tooling</h3>
+          <p class="text-xs text-neutral-500 leading-relaxed mb-6 font-light">
+            Automating multi-environment Docker containers, multi-cloud hosting, continuous deployment, and Git-driven monorepo structures.
+          </p>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Docker" data-cat="Containerization" data-desc="Containerized development and production environments, Dockerfiles, docker-compose orchestration, and isolated services." data-icon="🐳" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🐳</span>
+              <span>Docker</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="DigitalOcean" data-cat="Cloud Infrastructure" data-desc="Cloud droplets, Linux VPS configuration, reverse proxies, and production server maintenance." data-icon="🌊" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🌊</span>
+              <span>DigitalOcean</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Netlify" data-cat="Frontend Hosting" data-desc="Continuous automated branch deployments, edge redirects, asset optimization, and custom domains." data-icon="🌐" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🌐</span>
+              <span>Netlify</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Vercel" data-cat="Serverless Edge Platform" data-desc="Zero-config deployment for Next.js applications, serverless functions, edge routing, and global preview links." data-icon="▲" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] font-black transition-colors">▲</span>
+              <span>Vercel</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Render" data-cat="Cloud App Hosting" data-desc="Automated continuous deployment platform for containerized Node.js services, background workers, and PostgreSQL databases." data-icon="🚀" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🚀</span>
+              <span>Render</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Git & GitHub" data-cat="Version Control" data-desc="Feature-branch workflows, semantic commit conventions, pull request reviews, and GitHub Actions CI pipelines." data-icon="🐙" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🐙</span>
+              <span>Git &amp; GitHub</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Cloudinary" data-cat="Media CDN" data-desc="High-performance cloud asset storage, automatic image WebP/AVIF transformation, and responsive delivery." data-icon="☁️" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">☁️</span>
+              <span>Cloudinary</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Monorepo" data-cat="Project Architecture" data-desc="Unified multi-package workspace unifying backend API, frontend web, and shared schema packages with shared tooling." data-icon="📦" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">📦</span>
+              <span>Monorepo</span>
+            </div>
+
+            <div onmouseenter="inspectSkill(this)" onclick="inspectSkill(this)" data-name="Bruno" data-cat="API Testing Client" data-desc="Git-friendly, fast, open-source API client storing test collections directly in the repository without cloud lock-in." data-icon="🧪" class="skill-chip group/chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-50 hover:bg-black hover:text-white border border-neutral-200 hover:border-black transition-all duration-200 cursor-pointer text-xs font-semibold text-neutral-800 transform hover:-translate-y-1 hover:shadow-sm">
+              <span class="w-5 h-5 rounded-md bg-white border border-neutral-200 group-hover/chip:bg-neutral-800 group-hover/chip:border-neutral-700 flex items-center justify-center text-[10px] transition-colors">🧪</span>
+              <span>Bruno</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-6 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+          <span>WORKFLOW: DOCKER • CI/CD • GIT • TESTING</span>
+          <span class="text-neutral-900 font-bold">100% REPRODUCIBLE DEPLOYS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Interactive Tech Inspector Terminal HUD -->
+    <div class="mt-8 rounded-[28px] md:rounded-[32px] bg-[#0A0A0C] text-white p-6 sm:p-8 border border-neutral-800 shadow-2xl relative overflow-hidden">
+      <!-- Glow background circles -->
+      <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+
+      <!-- Top Terminal HUD bar -->
+      <div class="flex items-center justify-between pb-4 mb-5 border-b border-white/10 text-xs font-mono relative z-10">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+          <span class="text-neutral-400 ml-2 font-mono text-[11px] uppercase tracking-wider">TECH INSPECTOR HUD // V2.6</span>
+        </div>
+        <div class="flex items-center gap-2 text-neutral-400 text-[11px] font-mono">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span id="hud-status-badge" class="text-emerald-400 font-bold uppercase tracking-widest">ACTIVE INSPECTION</span>
+        </div>
+      </div>
+
+      <!-- Terminal Content -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10">
+        <div class="md:col-span-4 flex items-center gap-4">
+          <div id="hud-tech-icon" class="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-white text-2xl font-bold font-mono shrink-0 shadow-inner">
+            ⚛️
+          </div>
+          <div>
+            <span id="hud-tech-category" class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 block mb-0.5">FRONTEND ENGINEERING</span>
+            <h4 id="hud-tech-name" class="text-xl sm:text-2xl font-black text-white tracking-tight uppercase">React.js</h4>
+          </div>
+        </div>
+
+        <div class="md:col-span-8 bg-white/[0.03] border border-white/10 p-4 rounded-2xl">
+          <p id="hud-tech-desc" class="text-xs sm:text-sm text-neutral-300 font-mono leading-relaxed">
+            Core SPA library utilized for component hierarchies, custom hooks, reactive state flow, and virtual DOM optimization across production applications.
+          </p>
+          <div class="flex items-center justify-between mt-2 pt-2 border-t border-white/5 text-[10px] font-mono text-neutral-500">
+            <span>HOVER OR TAP ANY TECH CHIP ABOVE TO INSPECT</span>
+            <span class="text-emerald-400">SALMAN RASHEED M. // PRODUCTION SUITE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  
+  <!-- END: Skills Section -->
+
+  <!-- BEGIN: Services Section -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-20" data-purpose="services-section" id="services">
+    <!-- Centered Header -->
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-[11px] font-bold tracking-widest uppercase text-neutral-400 block mb-2">SERVICES</span>
+      <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900 mb-4">
+        WHAT I OFFER.
+      </h2>
+      <p class="text-xs md:text-xs uppercase font-medium leading-relaxed tracking-wider text-neutral-500">
+        ENGINEERING BESPOKE FULL-STACK SYSTEMS, INTUITIVE FRONTEND INTERFACES, AND HIGH-THROUGHPUT BACKENDS TAILORED TO YOUR BUSINESS REQUIREMENTS.
+      </p>
+    </div>
+
+    <!-- Service Pill Rows Accordion -->
+    <div class="max-w-4xl mx-auto flex flex-col space-y-3.5">
+      
+      <!-- Item 1: Full Stack Web Dev -->
+      <div id="service-0" onclick="toggleService(0)" class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl cursor-pointer">
+        <div class="flex items-center justify-between">
+          <span class="item-badge w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium">1</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase">FULL STACK WEB DEV</span>
+          <div class="item-icon w-8 h-8 rounded-full flex items-center justify-center">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <p class="item-desc text-xs leading-relaxed max-w-2xl mb-4">
+            End-to-end MERN stack applications, from database design to polished UI.
+          </p>
+          <div class="item-footer flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3">
+            <span class="item-deliverables text-[11px] font-mono">DELIVERABLES: REACT.JS, NODE.JS, EXPRESS, MONGODB, POSTGRESQL, TAILWIND CSS</span>
+            <button onclick="event.stopPropagation(); bookSpecificService('Full Stack Web Dev');" class="item-inquire-btn text-xs font-bold whitespace-nowrap self-start sm:self-auto">INQUIRE ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Frontend Development -->
+      <div id="service-1" onclick="toggleService(1)" class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl cursor-pointer">
+        <div class="flex items-center justify-between">
+          <span class="item-badge w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium">2</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase">FRONTEND DEVELOPMENT</span>
+          <div class="item-icon w-8 h-8 rounded-full flex items-center justify-center">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <p class="item-desc text-xs leading-relaxed max-w-2xl mb-4">
+            Responsive, accessible interfaces with React.js and modern CSS frameworks.
+          </p>
+          <div class="item-footer flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3">
+            <span class="item-deliverables text-[11px] font-mono">DELIVERABLES: REACT.JS, NEXT.JS, TYPESCRIPT, TAILWIND CSS, REDUX, ZUSTAND</span>
+            <button onclick="event.stopPropagation(); bookSpecificService('Frontend Development');" class="item-inquire-btn text-xs font-bold whitespace-nowrap self-start sm:self-auto">INQUIRE ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Backend Development (Active by default) -->
+      <div id="service-2" onclick="toggleService(2)" class="accordion-item active w-full flex flex-col px-6 py-4 rounded-3xl cursor-pointer">
+        <div class="flex items-center justify-between">
+          <span class="item-badge w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium">3</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase">BACKEND DEVELOPMENT</span>
+          <div class="item-icon w-8 h-8 rounded-full flex items-center justify-center">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <p class="item-desc text-xs leading-relaxed max-w-2xl mb-4">
+            Robust Node.js/Express APIs with authentication and security best practices.
+          </p>
+          <div class="item-footer flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3">
+            <span class="item-deliverables text-[11px] font-mono">DELIVERABLES: NODE.JS, EXPRESS.JS, REST APIS, JWT AUTH, ROLE BASED AUTH, POSTGRESQL, MONGODB</span>
+            <button onclick="event.stopPropagation(); bookSpecificService('Backend Development');" class="item-inquire-btn text-xs font-bold whitespace-nowrap self-start sm:self-auto">INQUIRE ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Software Development -->
+      <div id="service-3" onclick="toggleService(3)" class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl cursor-pointer">
+        <div class="flex items-center justify-between">
+          <span class="item-badge w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium">4</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase">SOFTWARE DEVELOPMENT</span>
+          <div class="item-icon w-8 h-8 rounded-full flex items-center justify-center">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <p class="item-desc text-xs leading-relaxed max-w-2xl mb-4">
+            Clean architecture, version control, and industry-standard workflows.
+          </p>
+          <div class="item-footer flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3">
+            <span class="item-deliverables text-[11px] font-mono">DELIVERABLES: CLEAN ARCHITECTURE, MVC PATTERNS, GIT &amp; GITHUB, MONOREPO, DOCKER</span>
+            <button onclick="event.stopPropagation(); bookSpecificService('Software Development');" class="item-inquire-btn text-xs font-bold whitespace-nowrap self-start sm:self-auto">INQUIRE ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: Custom Web Apps -->
+      <div id="service-4" onclick="toggleService(4)" class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl cursor-pointer">
+        <div class="flex items-center justify-between">
+          <span class="item-badge w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium">5</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase">CUSTOM WEB APPS</span>
+          <div class="item-icon w-8 h-8 rounded-full flex items-center justify-center">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <p class="item-desc text-xs leading-relaxed max-w-2xl mb-4">
+            Tailored applications to solve specific business challenges.
+          </p>
+          <div class="item-footer flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3">
+            <span class="item-deliverables text-[11px] font-mono">DELIVERABLES: CUSTOM SAAS, E-COMMERCE, LOGISTICS, CLINICAL EMR SYSTEMS, BUSINESS WORKFLOWS</span>
+            <button onclick="event.stopPropagation(); bookSpecificService('Custom Web Apps');" class="item-inquire-btn text-xs font-bold whitespace-nowrap self-start sm:self-auto">INQUIRE ↗</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- END: Services Section -->
+
+  <!-- BEGIN: Contact / Let's Talk Footer -->
+  <footer class="w-full bg-[#0D0D0D] text-white pt-20 pb-12 mt-12" data-purpose="footer-section" id="contact">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-14 flex flex-col items-center">
+      
+      <!-- Metallic Callout Headline -->
+      <div class="w-full text-center py-6 md:py-10">
+        <h2 class="text-[12vw] md:text-[8rem] lg:text-[10rem] font-black uppercase leading-none tracking-tight footer-metallic-title select-none cursor-pointer" onclick="openContactModal()">
+          LET'S TALK
+        </h2>
+      </div>
+
+      <!-- Action Button Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5 mt-8 mb-14">
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-semibold tracking-wider uppercase transition text-neutral-300 hover:text-white flex items-center gap-2" href="mailto:sallu2004mkt@gmail.com" title="Email: sallu2004mkt@gmail.com">
+          <svg class="w-3.5 h-3.5 text-neutral-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 0 02-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 02 2z"></path></svg>
+          <span>EMAIL</span>
+        </a>
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://github.com/sallu09876" target="_blank" rel="noopener">
+          GITHUB
+        </a>
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://www.linkedin.com/in/salmanrasheedm/" target="_blank" rel="noopener">
+          LINKEDIN
+        </a>
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://www.instagram.com/salman_rasheed_m/" target="_blank" rel="noopener">
+          INSTAGRAM
+        </a>
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://drive.google.com/file/d/1jSwTFry6pTpy56oJhw4K9bhx7q2yhM2r/view?usp=sharing" target="_blank" rel="noopener">
+          RESUME ↗
+        </a>
+        <button onclick="openContactModal()" class="px-7 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold tracking-wider uppercase transition transform hover:scale-105 shadow-lg flex items-center gap-2">
+          <span>CONTACT ME</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
+      <!-- Bottom Credits Bar -->
+      <div class="w-full pt-8 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-widest uppercase text-neutral-600 font-semibold gap-4">
+        <div>&copy; 2026 SALMAN RASHEED M. ALL RIGHTS RESERVED</div>
+        <div>CRAFTED WITH PRECISION</div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- END: Contact / Let's Talk Footer -->
+
+  <!-- MODAL: Project Detail Modal -->
+  <div id="project-modal" onclick="if(event.target === this) closeProjectModal()" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none flex items-center justify-center p-4">
+    <div id="project-modal-card" class="bg-white rounded-[32px] max-w-2xl w-full max-h-[90vh] overflow-y-auto no-scrollbar p-6 sm:p-8 md:p-9 shadow-2xl border border-neutral-100 opacity-0 scale-[0.94] translate-y-4 relative">
+      <div class="relative text-center pb-4 mb-5 border-b border-neutral-100">
+        <span id="modal-project-category" class="block text-[11px] font-bold tracking-widest uppercase text-neutral-400 mb-1">CATEGORY</span>
+        <h3 id="modal-project-title" class="text-2xl sm:text-3xl font-black uppercase text-neutral-900 tracking-tight">PROJECT TITLE</h3>
+        <button onclick="closeProjectModal()" class="absolute right-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-500 hover:border-black hover:text-black hover:bg-neutral-50 transition-colors" aria-label="Close modal">✕</button>
+      </div>
+      <div id="modal-project-body" class="space-y-5 text-sm text-neutral-700">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Contact Form Modal (Mobile-First & Fully Responsive) -->
+  <div id="contact-modal" onclick="if(event.target === this) closeContactModal()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-3 sm:p-4 md:p-6">
+    <div id="contact-modal-card" class="bg-white rounded-[24px] sm:rounded-[32px] max-w-lg md:max-w-4xl w-full max-h-[92vh] overflow-y-auto no-scrollbar shadow-[0_25px_70px_rgba(0,0,0,0.4)] border border-neutral-200 transform scale-95 transition-all duration-300 relative">
+      
+      <!-- Close Button -->
+      <button onclick="closeContactModal()" class="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-black transition" aria-label="Close Modal">
+        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 md:min-h-[520px]">
+        
+        <!-- Left Column: Editorial Info & Direct Channels (Visible on md+ screens) -->
+        <div class="hidden md:flex md:col-span-5 bg-[#0e0e10] text-white p-7 sm:p-9 flex-col justify-between relative overflow-hidden md:rounded-l-[32px]">
+          <!-- Background decorative glow -->
+          <div class="absolute -top-24 -left-24 w-56 h-56 rounded-full bg-neutral-800/40 blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -right-24 w-56 h-56 rounded-full bg-neutral-800/50 blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <!-- Title & Pitch -->
+            <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase leading-snug mb-3">
+              Let's create something remarkable.
+            </h3>
+            <p class="text-xs text-neutral-400 leading-relaxed mb-6 font-light">
+              Looking for a dependable full-stack developer to architect your SaaS, healthcare portal, logistics tool, or custom web platform? Reach out below.
+            </p>
+
+            <!-- Direct Contact Info Cards -->
+            <div class="space-y-3">
+              <!-- Email Card with 1-Click Copy -->
+              <div class="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition group">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-neutral-400">DIRECT EMAIL</span>
+                  <span id="copy-feedback" class="text-[9px] font-bold text-emerald-400 uppercase tracking-widest opacity-0 transition-opacity">COPIED!</span>
+                </div>
+                <div class="flex items-center justify-between gap-2">
+                  <a href="mailto:sallu2004mkt@gmail.com" class="text-xs sm:text-sm font-mono text-white truncate hover:underline hover:text-emerald-300 transition" title="sallu2004mkt@gmail.com">
+                    sallu2004mkt@gmail.com
+                  </a>
+                  <button type="button" onclick="copyContactEmail(this)" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-[10px] font-bold tracking-wider text-white transition flex items-center gap-1 shrink-0" title="Copy email address">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>COPY</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Company & Location Card -->
+              <div class="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10">
+                <span class="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">COMPANY &amp; LOCATION</span>
+                <p class="text-xs text-white font-semibold flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  Codeedex Technologies
+                </p>
+                <p class="text-[11px] text-neutral-300 font-mono mt-0.5">Perinthalmanna, Kerala, India</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Social Badges -->
+          <div class="relative z-10 pt-6 mt-6 border-t border-white/10 flex items-center gap-2">
+            <a href="https://github.com/sallu09876" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-[10px] font-semibold tracking-wider uppercase text-neutral-300 hover:text-white transition">
+              GITHUB
+            </a>
+            <a href="https://www.linkedin.com/in/salmanrasheedm/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-[10px] font-semibold tracking-wider uppercase text-neutral-300 hover:text-white transition">
+              LINKEDIN
+            </a>
+            <a href="https://www.instagram.com/salman_rasheed_m/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-[10px] font-semibold tracking-wider uppercase text-neutral-300 hover:text-white transition">
+              INSTAGRAM
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Form & In-Modal Success State -->
+        <div class="col-span-1 md:col-span-7 p-5 sm:p-7 md:p-9 flex flex-col justify-between bg-white relative">
+          
+          <!-- State 1: Active Form -->
+          <div id="contact-form-container">
+            <div class="mb-4 sm:mb-5">
+              <span class="text-[10px] font-extrabold tracking-widest uppercase text-neutral-400 block mb-0.5">START A CONVERSATION</span>
+              <h4 class="text-xl sm:text-2xl font-black uppercase text-neutral-900 tracking-tight">Send a Message</h4>
+            </div>
+
+            <form id="contact-form" onsubmit="submitContactForm(event)" class="space-y-3 sm:space-y-4">
+              <!-- Web3Forms Honeypot Anti-Spam Field -->
+              <input type="checkbox" name="botcheck" id="contact-botcheck" class="hidden" style="display: none;">
+              <input type="hidden" id="contact-timeline" value="Flexible">
+              
+              <!-- Name & Email Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
+                <div>
+                  <label class="block text-[11px] font-bold uppercase tracking-wider text-neutral-700 mb-1">Your Name *</label>
+                  <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-xs font-medium text-neutral-900 placeholder-neutral-400 transition bg-neutral-50/50 focus:bg-white">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold uppercase tracking-wider text-neutral-700 mb-1">Email Address *</label>
+                  <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-xs font-medium text-neutral-900 placeholder-neutral-400 transition bg-neutral-50/50 focus:bg-white">
+                </div>
+              </div>
+
+              <!-- Service Selection -->
+              <div>
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-neutral-700 mb-1">Service Needed</label>
+                <select id="contact-service" class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-xs font-medium text-neutral-900 bg-white transition cursor-pointer">
+                  <option value="Full Stack Web Dev">Full Stack Web Dev — End-to-end MERN application</option>
+                  <option value="Frontend Development">Frontend Development — React, Next.js &amp; UI engineering</option>
+                  <option value="Backend Development">Backend Development — Node.js, Express &amp; REST APIs</option>
+                  <option value="Software Development">Software Development — Clean architecture &amp; workflows</option>
+                  <option value="Custom Web Apps">Custom Web Apps — SaaS, Logistics, EMR, or E-Commerce</option>
+                  <option value="General Consultation">General Consultation / Inquiry</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-neutral-700 mb-1">Message *</label>
+                <textarea id="contact-message" rows="3" required placeholder="Briefly describe your goals, requirements, or idea..." class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-xs font-medium text-neutral-900 placeholder-neutral-400 transition bg-neutral-50/50 focus:bg-white resize-none"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button id="contact-submit-btn" type="submit" class="w-full py-3 sm:py-3.5 bg-black text-white hover:bg-neutral-800 rounded-xl text-xs font-bold tracking-widest uppercase transition flex items-center justify-center gap-2 group shadow-md hover:shadow-lg active:scale-[0.99]">
+                <span id="contact-btn-text">SEND MESSAGE</span>
+                <svg id="contact-btn-icon" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <svg id="contact-btn-spinner" class="w-4 h-4 animate-spin hidden" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+              </button>
+
+              <!-- Direct Delivery Note & Mobile Social Row -->
+              <div class="pt-1 flex flex-col items-center gap-2">
+                <p class="text-[10px] text-center text-neutral-400">
+                  🔒 Direct delivery to sallu2004mkt@gmail.com
+                </p>
+                <div class="flex md:hidden items-center justify-center gap-3 text-[10px] font-semibold uppercase text-neutral-500 pt-1">
+                  <a href="https://github.com/sallu09876" target="_blank" rel="noopener" class="hover:text-black transition">GitHub</a>
+                  <span>•</span>
+                  <a href="https://www.linkedin.com/in/salmanrasheedm/" target="_blank" rel="noopener" class="hover:text-black transition">LinkedIn</a>
+                  <span>•</span>
+                  <a href="https://www.instagram.com/salman_rasheed_m/" target="_blank" rel="noopener" class="hover:text-black transition">Instagram</a>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- State 2: Success State (Smoothly shown upon submit) -->
+          <div id="contact-success-state" class="hidden flex-col items-center justify-center text-center py-10 px-4 my-auto">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 shadow-sm">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 mb-1">INQUIRY TRANSMITTED</span>
+            <h4 class="text-2xl font-black uppercase text-neutral-900 mb-2">Message Received!</h4>
+            <p id="contact-success-text" class="text-xs text-neutral-600 leading-relaxed max-w-sm mb-6">
+              Thank you! Your project details have been successfully received. Salman will review your requirements and reach out to you within 24 hours.
+            </p>
+            <div class="flex items-center gap-3">
+              <button type="button" onclick="resetContactFormUI()" class="px-5 py-2.5 rounded-full border border-neutral-300 hover:border-black text-xs font-bold tracking-wider uppercase transition text-neutral-700 hover:text-black">
+                Send Another Note
+              </button>
+              <button type="button" onclick="closeContactModal()" class="px-6 py-2.5 rounded-full bg-black text-white hover:bg-neutral-800 text-xs font-bold tracking-wider uppercase transition">
+                Done
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Core & Interactive Runtime -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

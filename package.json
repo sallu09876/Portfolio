@@ -1,0 +1,15 @@
+{
+  "name": "salman-rasheed-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Salman Rasheed M. — Full Stack & MERN Developer Portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "npx serve -l 8080 ."
+  },
+  "dependencies": {
+    "@fiddle-digital/string-tune": "^1.2.0"
+  }
+}
