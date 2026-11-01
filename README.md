@@ -97,7 +97,7 @@ ECHO-WEBSITE-main/
 ├── styles.css                   # Custom Animations, Hero Masks & Accordions
 ├── preloader.js                 # Architectural Luxury Preloader Controller
 ├── main.js                      # Core Application Engine, Modals & Web3Forms
-├── server.js                    # Node.js Static & Contact API Server
+├── local-server.js              # Local Node.js Development Server
 ├── flex-carousel.js             # WebGL Liquid Shader Project Engine
 ├── FlexCarousel.css             # Liquid Shader Stylesheet
 ├── works-wheel.js               # 3D Vertical Drum Reel Engine
@@ -143,7 +143,7 @@ cd salman-rasheed-portfolio
 ```bash
 npm start
 # or
-node server.js
+node local-server.js
 ```
 
 Navigate to **`http://localhost:8080`** in your browser.
