@@ -399,7 +399,7 @@ document.addEventListener('keydown', (e) => {
 // 6. WEB3FORMS / CONTACT FORM HANDLER
 // ============================================================================
 
-export const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+export const WEB3FORMS_ACCESS_KEY = "5a74187a-b86b-4548-bd68-a21674a31fb4";
 
 export async function submitContactForm(e) {
   e.preventDefault();
