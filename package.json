@@ -5,6 +5,7 @@
   "description": "Salman Rasheed M. — Full Stack & MERN Developer Portfolio",
   "type": "module",
   "scripts": {
+    "build": "echo 'Static build ready'",
     "dev": "node local-server.js",
     "serve": "npx serve -l 8080 ."
   },
